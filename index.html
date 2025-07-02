@@ -1,71 +1,157 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ma Boutique Simple</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fafafa;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    h1 {
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ma Boutique Pro</title>
+<style>
+  /* Reset de base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #ffc107;
+  }
+  main {
+    flex: 1;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .produits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 25px;
+  }
+  .produit-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .produit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgb(0 0 0 / 0.15);
+  }
+  .produit-img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 180px;
+    margin-bottom: 15px;
+  }
+  .produit-titre {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #007bff;
+    font-weight: 700;
+  }
+  .produit-description {
+    flex-grow: 1;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  .produit-prix {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 15px;
+  }
+  .btn-acheter {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  .btn-acheter:hover {
+    background-color: #0056b3;
+  }
+  footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+  }
+
+  /* Responsive menu (optionnel si tu veux développer) */
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
       text-align: center;
-      color: #222;
     }
-    .produit {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      padding: 15px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
+    nav {
+      margin-top: 10px;
     }
-    .produit img {
-      max-width: 150px;
-      border-radius: 8px;
+    nav a {
+      margin-left: 10px;
+      margin-right: 10px;
     }
-    .info {
-      flex-grow: 1;
-    }
-    .prix {
-      font-size: 1.2em;
-      color: #0077cc;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .btn-acheter {
-      background: #0077cc;
-      border: none;
-      color: white;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-acheter:hover {
-      background: #005fa3;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <h1>Ma Boutique Simple</h1>
 
-  <!-- Produit 1 -->
-  <div class="produit">
-    <img src="https://via.placeholder.com/150" alt="Produit 1" />
-    <div class="info">
-      <h2>Produit 1</h2>
-      <p>Un super produit qui fait tout ce que vous voulez.</p>
-      <div class="prix">19,99 €</div>
-      <!-- Bouton PayPal -->
+<header>
+  <h1>Ma Boutique Pro</h1>
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#">Produits</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="produits-grid">
+    <!-- Produit 1 -->
+    <div class="produit-card">
+      <img class="produit-img" src="https://via.placeholder.com/400x300?text=Produit+1" alt="Produit 1" />
+      <h2 class="produit-titre">Produit 1</h2>
+      <p class="produit-description">Un super produit de qualité qui répond à tous vos besoins.</p>
+      <div class="produit-prix">19,99 €</div>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_xclick" />
         <input type="hidden" name="business" value="ton-email-paypal@example.com" />
@@ -75,16 +161,13 @@
         <button type="submit" class="btn-acheter">Acheter</button>
       </form>
     </div>
-  </div>
 
-  <!-- Produit 2 -->
-  <div class="produit">
-    <img src="https://via.placeholder.com/150" alt="Produit 2" />
-    <div class="info">
-      <h2>Produit 2</h2>
-      <p>Un autre produit encore plus incroyable.</p>
-      <div class="prix">29,99 €</div>
-      <!-- Bouton PayPal -->
+    <!-- Produit 2 -->
+    <div class="produit-card">
+      <img class="produit-img" src="https://via.placeholder.com/400x300?text=Produit+2" alt="Produit 2" />
+      <h2 class="produit-titre">Produit 2</h2>
+      <p class="produit-description">Un autre produit exceptionnel avec des fonctionnalités avancées.</p>
+      <div class="produit-prix">29,99 €</div>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_xclick" />
         <input type="hidden" name="business" value="ton-email-paypal@example.com" />
@@ -94,7 +177,28 @@
         <button type="submit" class="btn-acheter">Acheter</button>
       </form>
     </div>
+
+    <!-- Produit 3 -->
+    <div class="produit-card">
+      <img class="produit-img" src="https://via.placeholder.com/400x300?text=Produit+3" alt="Produit 3" />
+      <h2 class="produit-titre">Produit 3</h2>
+      <p class="produit-description">Le produit ultime pour les connaisseurs exigeants.</p>
+      <div class="produit-prix">39,99 €</div>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="ton-email-paypal@example.com" />
+        <input type="hidden" name="item_name" value="Produit 3" />
+        <input type="hidden" name="amount" value="39.99" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <button type="submit" class="btn-acheter">Acheter</button>
+      </form>
+    </div>
   </div>
+</main>
+
+<footer>
+  &copy; 2025 Ma Boutique Pro. Tous droits réservés.
+</footer>
 
 </body>
 </html>

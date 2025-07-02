@@ -1,123 +1,176 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sneakwash</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #eee;
-      font-family: 'Roboto', sans-serif;
-    }
-    header {
-      text-align: center;
-      padding: 100px 20px 50px;
-    }
-    header img {
-      max-width: 300px;
-    }
-    header h1 {
-      font-size: 2rem;
-      margin: 20px 0;
-    }
-    header a {
-      display: inline-block;
-      background: #e50914;
-      color: #fff;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 30px;
-      transition: background 0.3s;
-    }
-    header a:hover {
-      background: #ff1f1f;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      text-align: center;
-    }
-    .service {
-      background: #111;
-      padding: 30px;
-      border-radius: 15px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
+npx create-next-app@latest sneakwash
+cd sneakwash
+npm install framer-motion
 
-  <header>
-    <img src="TON_LOGO.png" alt="Sneakwash Logo" />
-    <h1>Redonne vie à tes sneakers</h1>
-    <a href="#contact">Prendre rendez-vous</a>
-  </header>
+import Head from "next/head";
+import { motion } from "framer-motion";
 
-  <section>
-    <h2>Nos Services</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Nettoyage complet</h3>
-        <p>Un nettoyage en profondeur pour des sneakers comme neuves.</p>
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Sneakwash</title>
+      </Head>
+
+      <div className="hero">
+        <video autoPlay muted loop className="video-bg">
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
+        <div className="overlay"></div>
+        <motion.div
+          className="content"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <img src="/logo.png" alt="Sneakwash Logo" className="logo" />
+          <h1>Redonne vie à tes sneakers</h1>
+          <div className="cta-buttons">
+            <a href="/boutique" className="btn">Acheter le kit</a>
+            <a href="#contact" className="btn">Envoyer mes sneakers</a>
+          </div>
+        </motion.div>
       </div>
-      <div class="service">
-        <h3>Restauration</h3>
-        <p>Répare les dommages et redonne de l’éclat à tes paires favorites.</p>
-      </div>
-      <div class="service">
-        <h3>Customisation</h3>
-        <p>Personnalise tes sneakers selon ton style.</p>
-      </div>
-      <div class="service">
-        <h3>Produits</h3>
-        <p>Achetez nos kits et produits d’entretien professionnels.</p>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <h2>Avant / Après</h2>
-    <div class="gallery">
-      <img src="avant1.jpg" alt="Avant/Après 1">
-      <img src="avant2.jpg" alt="Avant/Après 2">
-      <img src="avant3.jpg" alt="Avant/Après 3">
-    </div>
-  </section>
+      <section id="contact" className="contact">
+        <h2>Envoyer mes sneakers</h2>
+        <p>Remplis le formulaire et envoie-nous les photos de ta paire pour un devis personnalisé :</p>
+        <form action="https://formspree.io/f/TON_FORM_ID" method="POST" encType="multipart/form-data">
+          <input type="text" name="Nom" placeholder="Nom" required />
+          <input type="email" name="Email" placeholder="Email" required />
+          <textarea name="Description" placeholder="Décris l'état de ta paire" required></textarea>
+          <label>Ajouter des photos :</label>
+          <input type="file" name="Photos" accept="image/*" multiple required />
+          <button type="submit">Envoyer ma demande</button>
+        </form>
+      </section>
+    </>
+  );
+}
+import Head from "next/head";
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Contactez-nous pour un devis ou un rendez-vous :</p>
-    <p>Email : contact@sneakwash.fr</p>
-    <p>Téléphone : +33 6 12 34 56 78</p>
-  </section>
+export default function Boutique() {
+  return (
+    <>
+      <Head>
+        <title>Boutique Sneakwash</title>
+      </Head>
+      <main style={{ padding: "100px 20px", textAlign: "center" }}>
+        <h1>Notre Kit de Nettoyage</h1>
+        <p>Bientôt disponible ! Contacte-nous pour précommander.</p>
+        <a href="/" style={{
+          display: "inline-block",
+          marginTop: "20px",
+          padding: "15px 30px",
+          background: "#e50914",
+          color: "#fff",
+          textDecoration: "none",
+          borderRadius: "50px"
+        }}>Retour</a>
+      </main>
+    </>
+  );
+}body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
 
-  <footer>
-    &copy; 2025 Sneakwash. Tous droits réservés.
-  </footer>
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
-</body>
-</html>
+.video-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  max-width: 300px;
+}
+
+h1 {
+  margin: 30px 0;
+  font-size: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #e50914;
+  padding: 20px 40px;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ff1f1f;
+}
+
+.contact {
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input, textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background: #e50914;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #ff1f1f;
+}
+Photoroom_20250503_235239.JPEG  →  logo.png
+/sneakwash/public/logo.png
+<img src="/logo.png" alt="Sneakwash Logo" className="logo" />
+<img src="/logo.jpeg" alt="Sneakwash Logo" className="logo" />
+

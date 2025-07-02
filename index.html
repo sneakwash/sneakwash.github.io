@@ -1,120 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Mon premier site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-    <h1>Bienvenue sur mon site !</h1>
-    <p>Site créé gratuitement avec GitHub Pages.</p>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Site Pro</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ma Boutique Simple</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #0066cc;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background: #004a99;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
       max-width: 900px;
-      margin: 30px auto;
+      margin: auto;
       padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #222;
+    }
+    .produit {
       background: white;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    footer {
-      background: #eee;
-      text-align: center;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
       padding: 15px;
-      font-size: 0.9em;
-      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
-
-    @media screen and (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
+    .produit img {
+      max-width: 150px;
+      border-radius: 8px;
+    }
+    .info {
+      flex-grow: 1;
+    }
+    .prix {
+      font-size: 1.2em;
+      color: #0077cc;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .btn-acheter {
+      background: #0077cc;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-acheter:hover {
+      background: #005fa3;
     }
   </style>
 </head>
 <body>
+  <h1>Ma Boutique Simple</h1>
 
-  <header>
-    <h1>Bienvenue sur mon sneakwash</h1>
-    <p>Un site élégant, rapide et 100% gratuit</p>
-  </header>
-
-  <nav>
-    <a href="#">Accueil</a>
-    <a href="#">À propos</a>
-    <a href="#">Contact</a>
-  </nav>
-
-  <div class="container">
-    <h2>Qui suis-je ?</h2>
-    <p>
-      Bonjour ! Je m'appelle rémi et ceci est mon site web. Je l’ai créé gratuitement avec GitHub Pages.  
-    </p>
-    <p>
-      Tu peux personnaliser cette section avec ton projet, ton CV, tes services ou ce que tu veux présenter.
-    </p>
+  <!-- Produit 1 -->
+  <div class="produit">
+    <img src="https://via.placeholder.com/150" alt="Produit 1" />
+    <div class="info">
+      <h2>Produit 1</h2>
+      <p>Un super produit qui fait tout ce que vous voulez.</p>
+      <div class="prix">19,99 €</div>
+      <!-- Bouton PayPal -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="ton-email-paypal@example.com" />
+        <input type="hidden" name="item_name" value="Produit 1" />
+        <input type="hidden" name="amount" value="19.99" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <button type="submit" class="btn-acheter">Acheter</button>
+      </form>
+    </div>
   </div>
 
-  <footer>
-    © 2025 - MonSite. Créé avec ♥ par moi-même.
-  </footer>
+  <!-- Produit 2 -->
+  <div class="produit">
+    <img src="https://via.placeholder.com/150" alt="Produit 2" />
+    <div class="info">
+      <h2>Produit 2</h2>
+      <p>Un autre produit encore plus incroyable.</p>
+      <div class="prix">29,99 €</div>
+      <!-- Bouton PayPal -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="ton-email-paypal@example.com" />
+        <input type="hidden" name="item_name" value="Produit 2" />
+        <input type="hidden" name="amount" value="29.99" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <button type="submit" class="btn-acheter">Acheter</button>
+      </form>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -3,101 +3,188 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>sneakwash</title>
+<title>SneakWash - Nettoyage et Produits pour Chaussures</title>
 <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
   }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f5f7fa;
+    color: #2c3e50;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px 40px;
+  }
+
   header {
     text-align: center;
-    padding: 20px 0;
+    margin-bottom: 40px;
   }
-  h1 {
-    color: #007bff;
+
+  header h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #2980b9;
+    margin-bottom: 8px;
   }
+  header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+  }
+
   section {
     background: white;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+    padding: 30px 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    margin-bottom: 50px;
   }
+
+  h2 {
+    color: #34495e;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #2980b9;
+    padding-bottom: 8px;
+  }
+
+  /* Boutique produit */
   .produit {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
     align-items: center;
   }
   .produit img {
-    max-width: 200px;
-    border-radius: 8px;
+    flex: 1 1 280px;
+    max-width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease;
+  }
+  .produit img:hover {
+    transform: scale(1.05);
   }
   .produit-info {
-    flex-grow: 1;
+    flex: 2 1 350px;
   }
+  .produit-info p {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    color: #555;
+  }
+  .prix {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #27ae60;
+    margin-bottom: 25px;
+  }
+
+  /* Bouton achat */
   .btn-acheter {
-    background-color: #007bff;
-    color: white;
+    background: linear-gradient(135deg, #2980b9, #3498db);
     border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 6px;
+    padding: 15px 30px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 6px 12px rgb(41 128 185 / 0.5);
+    transition: all 0.3s ease;
   }
   .btn-acheter:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #1c5980, #2471a3);
+    box-shadow: 0 10px 20px rgb(28 89 128 / 0.7);
+    transform: translateY(-3px);
   }
+
+  /* Formulaire nettoyage */
   form label {
     display: block;
-    margin-top: 15px;
+    margin-top: 18px;
     font-weight: 600;
+    font-size: 1.1rem;
+    color: #34495e;
   }
   form input, form textarea, form select {
     width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1.8px solid #bdc3c7;
     font-size: 1rem;
+    margin-top: 6px;
     resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 8px #2980b9aa;
   }
   form textarea {
-    min-height: 80px;
+    min-height: 90px;
   }
   form button {
-    margin-top: 20px;
-    background-color: #28a745;
+    margin-top: 28px;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
     border: none;
-    padding: 12px 20px;
+    padding: 15px 0;
     color: white;
     font-weight: 700;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    width: 100%;
+    box-shadow: 0 6px 15px rgb(39 174 96 / 0.5);
+    transition: all 0.3s ease;
   }
   form button:hover {
-    background-color: #1e7e34;
+    background: linear-gradient(135deg, #1e8449, #239b56);
+    box-shadow: 0 10px 25px rgb(30 132 73 / 0.7);
+    transform: translateY(-3px);
+  }
+
+  footer {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .produit {
+      flex-direction: column;
+    }
+    .produit img, .produit-info {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>sneakwash</h1>
+  <h1>SneakWash</h1>
+  <p>Le meilleur kit et service pour des chaussures impeccables</p>
 </header>
 
 <section id="boutique">
-  <h2>Kit Nettoyant Chaussures</h2>
+  <h2>Notre Kit Nettoyant</h2>
   <div class="produit">
-    <img src="https://via.placeholder.com/200x150?text=Kit+Nettoyant" alt="Kit Nettoyant Chaussures" />
+    <img src="https://via.placeholder.com/320x240?text=Kit+Nettoyant" alt="Kit Nettoyant Chaussures" />
     <div class="produit-info">
-      <p>Un kit complet pour garder vos chaussures propres et éclatantes.</p>
-      <p><strong>Prix :35 €</strong></p>
-      <form action="https://goujardr3@gmail.com/cgi-bin/webscr" method="post" target="_blank">
+      <p>Un kit complet pour garder vos chaussures propres et éclatantes. Inclus : nettoyant, brosse, chiffon microfibre.</p>
+      <div class="prix">24,99 €</div>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_xclick" />
         <input type="hidden" name="business" value="ton-email-paypal@example.com" />
         <input type="hidden" name="item_name" value="Kit Nettoyant Chaussures" />
@@ -111,7 +198,7 @@
 
 <section id="service-nettoyage">
   <h2>Confiez-nous vos chaussures à nettoyer</h2>
-  <p>Remplissez le formulaire ci-dessous pour nous envoyer vos chaussures. Nous vous contacterons pour les modalités.</p>
+  <p>Remplissez le formulaire ci-dessous pour nous envoyer vos chaussures. Nous vous contacterons pour les modalités et le prix.</p>
 
   <form action="https://formspree.io/f/ton-id-formspree" method="POST">
     <label for="nom">Nom complet *</label>
@@ -124,22 +211,22 @@
     <textarea id="adresse" name="adresse" required></textarea>
 
     <label for="description">Description des chaussures / demande *</label>
-    <textarea id="description" name="description" placeholder="Ex : type de chaussures, état, type de nettoyage souhaité..." required></textarea>
+    <textarea id="description" name="description" placeholder="Type, état, nettoyage souhaité..." required></textarea>
 
     <label for="service">Type de service *</label>
     <select id="service" name="service" required>
       <option value="">-- Sélectionnez --</option>
       <option value="nettoyage_simple">Nettoyage simple - 15€</option>
-      <option value="nettoyage_complet">Nettoyage complet - 25€</option>
-      <option value="restauration">Restauration & traitement - 35€</option>
+      <option value="nettoyage_complet">Nettoyage complet - 30€</option>
+      <option value="restauration">Restauration & traitement - 50€</option>
     </select>
 
     <button type="submit">Envoyer ma demande</button>
   </form>
 </section>
 
-<footer style="text-align:center; margin-top:40px; color:#666;">
-  &copy; 2025 Ma Boutique Nettoyage Chaussures - Tous droits réservés
+<footer>
+  &copy; 2025 SneakWash - Tous droits réservés
 </footer>
 
 </body>

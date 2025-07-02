@@ -3,201 +3,143 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ma Boutique Pro</title>
+<title>Ma Boutique Nettoyage Chaussures</title>
 <style>
-  /* Reset de base */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
     color: #333;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
   }
   header {
-    background-color: #007bff;
-    color: white;
-    padding: 20px 30px;
+    text-align: center;
+    padding: 20px 0;
+  }
+  h1 {
+    color: #007bff;
+  }
+  section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+  }
+  .produit {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
     align-items: center;
   }
-  header h1 {
-    font-weight: 700;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-  }
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  nav a:hover {
-    color: #ffc107;
-  }
-  main {
-    flex: 1;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  .produits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 25px;
-  }
-  .produit-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .produit-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgb(0 0 0 / 0.15);
-  }
-  .produit-img {
-    width: 100%;
+  .produit img {
+    max-width: 200px;
     border-radius: 8px;
-    object-fit: cover;
-    height: 180px;
-    margin-bottom: 15px;
   }
-  .produit-titre {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #007bff;
-    font-weight: 700;
-  }
-  .produit-description {
+  .produit-info {
     flex-grow: 1;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-    color: #555;
-  }
-  .produit-prix {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #28a745;
-    margin-bottom: 15px;
   }
   .btn-acheter {
     background-color: #007bff;
-    border: none;
     color: white;
-    padding: 12px 18px;
-    font-weight: 700;
+    border: none;
+    padding: 12px 20px;
     font-size: 1rem;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
   }
   .btn-acheter:hover {
     background-color: #0056b3;
   }
-  footer {
-    background-color: #343a40;
-    color: #adb5bd;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    margin-top: 40px;
+  form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
   }
-
-  /* Responsive menu (optionnel si tu veux développer) */
-  @media (max-width: 600px) {
-    header {
-      flex-direction: column;
-      text-align: center;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+  form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  form textarea {
+    min-height: 80px;
+  }
+  form button {
+    margin-top: 20px;
+    background-color: #28a745;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+  form button:hover {
+    background-color: #1e7e34;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Ma Boutique Pro</h1>
-  <nav>
-    <a href="#">Accueil</a>
-    <a href="#">Produits</a>
-    <a href="#">Contact</a>
-  </nav>
+  <h1>Ma Boutique Nettoyage Chaussures</h1>
 </header>
 
-<main>
-  <div class="produits-grid">
-    <!-- Produit 1 -->
-    <div class="produit-card">
-      <img class="produit-img" src="https://via.placeholder.com/400x300?text=Produit+1" alt="Produit 1" />
-      <h2 class="produit-titre">Produit 1</h2>
-      <p class="produit-description">Un super produit de qualité qui répond à tous vos besoins.</p>
-      <div class="produit-prix">19,99 €</div>
+<section id="boutique">
+  <h2>Kit Nettoyant Chaussures</h2>
+  <div class="produit">
+    <img src="https://via.placeholder.com/200x150?text=Kit+Nettoyant" alt="Kit Nettoyant Chaussures" />
+    <div class="produit-info">
+      <p>Un kit complet pour garder vos chaussures propres et éclatantes.</p>
+      <p><strong>Prix : 24,99 €</strong></p>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_xclick" />
         <input type="hidden" name="business" value="ton-email-paypal@example.com" />
-        <input type="hidden" name="item_name" value="Produit 1" />
-        <input type="hidden" name="amount" value="19.99" />
+        <input type="hidden" name="item_name" value="Kit Nettoyant Chaussures" />
+        <input type="hidden" name="amount" value="24.99" />
         <input type="hidden" name="currency_code" value="EUR" />
-        <button type="submit" class="btn-acheter">Acheter</button>
-      </form>
-    </div>
-
-    <!-- Produit 2 -->
-    <div class="produit-card">
-      <img class="produit-img" src="https://via.placeholder.com/400x300?text=Produit+2" alt="Produit 2" />
-      <h2 class="produit-titre">Produit 2</h2>
-      <p class="produit-description">Un autre produit exceptionnel avec des fonctionnalités avancées.</p>
-      <div class="produit-prix">29,99 €</div>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick" />
-        <input type="hidden" name="business" value="ton-email-paypal@example.com" />
-        <input type="hidden" name="item_name" value="Produit 2" />
-        <input type="hidden" name="amount" value="29.99" />
-        <input type="hidden" name="currency_code" value="EUR" />
-        <button type="submit" class="btn-acheter">Acheter</button>
-      </form>
-    </div>
-
-    <!-- Produit 3 -->
-    <div class="produit-card">
-      <img class="produit-img" src="https://via.placeholder.com/400x300?text=Produit+3" alt="Produit 3" />
-      <h2 class="produit-titre">Produit 3</h2>
-      <p class="produit-description">Le produit ultime pour les connaisseurs exigeants.</p>
-      <div class="produit-prix">39,99 €</div>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick" />
-        <input type="hidden" name="business" value="ton-email-paypal@example.com" />
-        <input type="hidden" name="item_name" value="Produit 3" />
-        <input type="hidden" name="amount" value="39.99" />
-        <input type="hidden" name="currency_code" value="EUR" />
-        <button type="submit" class="btn-acheter">Acheter</button>
+        <button type="submit" class="btn-acheter">Acheter le kit</button>
       </form>
     </div>
   </div>
-</main>
+</section>
 
-<footer>
-  &copy; 2025 Ma Boutique Pro. Tous droits réservés.
+<section id="service-nettoyage">
+  <h2>Confiez-nous vos chaussures à nettoyer</h2>
+  <p>Remplissez le formulaire ci-dessous pour nous envoyer vos chaussures. Nous vous contacterons pour les modalités.</p>
+
+  <form action="https://formspree.io/f/ton-id-formspree" method="POST">
+    <label for="nom">Nom complet *</label>
+    <input type="text" id="nom" name="nom" required />
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="adresse">Adresse postale *</label>
+    <textarea id="adresse" name="adresse" required></textarea>
+
+    <label for="description">Description des chaussures / demande *</label>
+    <textarea id="description" name="description" placeholder="Ex : type de chaussures, état, type de nettoyage souhaité..." required></textarea>
+
+    <label for="service">Type de service *</label>
+    <select id="service" name="service" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="nettoyage_simple">Nettoyage simple - 15€</option>
+      <option value="nettoyage_complet">Nettoyage complet - 30€</option>
+      <option value="restauration">Restauration & traitement - 50€</option>
+    </select>
+
+    <button type="submit">Envoyer ma demande</button>
+  </form>
+</section>
+
+<footer style="text-align:center; margin-top:40px; color:#666;">
+  &copy; 2025 Ma Boutique Nettoyage Chaussures - Tous droits réservés
 </footer>
 
 </body>

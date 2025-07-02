@@ -1,219 +1,123 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SneakWash - Nettoyage et Produits pour Chaussures</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #EDF6F9, #FFFFFF);
-    color: #2c3e50;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px 40px;
-  }
-
-  header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  header img {
-    max-width: 220px;
-    display: block;
-    margin: 0 auto 15px;
-  }
-
-  header p {
-    font-size: 1.1rem;
-    color: #6B6B6B;
-  }
-
-  section {
-    background: white;
-    padding: 30px 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
-    margin-bottom: 50px;
-  }
-
-  h2 {
-    color: #006D77;
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    border-bottom: 3px solid #006D77;
-    padding-bottom: 8px;
-  }
-
-  /* Boutique produit */
-  .produit {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-  }
-  .produit img {
-    flex: 1 1 280px;
-    max-width: 320px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
-    transition: transform 0.3s ease;
-  }
-  .produit img:hover {
-    transform: scale(1.05);
-  }
-  .produit-info {
-    flex: 2 1 350px;
-  }
-  .produit-info p {
-    font-size: 1.1rem;
-    margin-bottom: 18px;
-    color: #555;
-  }
-  .prix {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #2a9d8f;
-    margin-bottom: 25px;
-  }
-
-  /* Bouton achat */
-  .btn-acheter {
-    background: linear-gradient(135deg, #006D77, #83C5BE);
-    border: none;
-    padding: 15px 30px;
-    color: white;
-    font-weight: 700;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 6px 12px rgb(0 109 119 / 0.5);
-    transition: all 0.3s ease;
-  }
-  .btn-acheter:hover {
-    background: linear-gradient(135deg, #00494d, #5ea9a5);
-    box-shadow: 0 10px 20px rgb(0 73 77 / 0.7);
-    transform: translateY(-3px);
-  }
-
-  /* Formulaire nettoyage */
-  form label {
-    display: block;
-    margin-top: 18px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #006D77;
-  }
-  form input, form textarea, form select {
-    width: 100%;
-    padding: 12px 15px;
-    border-radius: 8px;
-    border: 1.8px solid #bdc3c7;
-    font-size: 1rem;
-    margin-top: 6px;
-    resize: vertical;
-    transition: border-color 0.3s ease;
-  }
-  form input:focus, form textarea:focus, form select:focus {
-    outline: none;
-    border-color: #006D77;
-    box-shadow: 0 0 8px #006D77aa;
-  }
-  form textarea {
-    min-height: 90px;
-  }
-  form button {
-    margin-top: 28px;
-    background: linear-gradient(135deg, #2a9d8f, #83c5be);
-    border: none;
-    padding: 15px 0;
-    color: white;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1.3rem;
-    width: 100%;
-    box-shadow: 0 6px 15px rgb(42 157 143 / 0.5);
-    transition: all 0.3s ease;
-  }
-  form button:hover {
-    background: linear-gradient(135deg, #1f6e71, #5ea9a5);
-    box-shadow: 0 10px 25px rgb(31 110 113 / 0.7);
-    transform: translateY(-3px);
-  }
-
-  footer {
-    text-align: center;
-    color: #6B6B6B;
-    font-size: 0.9rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 720px) {
-    .produit {
-      flex-direction: column;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sneakwash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #eee;
+      font-family: 'Roboto', sans-serif;
     }
-    .produit img, .produit-info {
-      flex: 1 1 100%;
-      max-width: 100%;
+    header {
+      text-align: center;
+      padding: 100px 20px 50px;
     }
-  }
-</style>
+    header img {
+      max-width: 300px;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+    header a {
+      display: inline-block;
+      background: #e50914;
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s;
+    }
+    header a:hover {
+      background: #ff1f1f;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .service {
+      background: #111;
+      padding: 30px;
+      border-radius: 15px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <img src="logo.png" alt="SneakWash Logo" />
-  <p>Le meilleur kit et service pour des chaussures impeccables</p>
-</header>
+  <header>
+    <img src="TON_LOGO.png" alt="Sneakwash Logo" />
+    <h1>Redonne vie à tes sneakers</h1>
+    <a href="#contact">Prendre rendez-vous</a>
+  </header>
 
-<section id="boutique">
-  <h2>Notre Kit Nettoyant</h2>
-  <div class="produit">
-    <img src="https://via.placeholder.com/320x240?text=Kit+Nettoyant" alt="Kit Nettoyant Chaussures" />
-    <div class="produit-info">
-      <p>Un kit complet pour garder vos chaussures propres et éclatantes. Inclus : nettoyant, brosse, chiffon microfibre.</p>
-      <div class="prix">24,99 €</div>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick" />
-        <input type="hidden" name="business" value="ton-email-paypal@example.com" />
-        <input type="hidden" name="item_name" value="Kit Nettoyant Chaussures" />
-        <input type="hidden" name="amount" value="24.99" />
-        <input type="hidden" name="currency_code" value="EUR" />
-        <button type="submit" class="btn-acheter">Acheter le kit</button>
-      </form>
+  <section>
+    <h2>Nos Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Nettoyage complet</h3>
+        <p>Un nettoyage en profondeur pour des sneakers comme neuves.</p>
+      </div>
+      <div class="service">
+        <h3>Restauration</h3>
+        <p>Répare les dommages et redonne de l’éclat à tes paires favorites.</p>
+      </div>
+      <div class="service">
+        <h3>Customisation</h3>
+        <p>Personnalise tes sneakers selon ton style.</p>
+      </div>
+      <div class="service">
+        <h3>Produits</h3>
+        <p>Achetez nos kits et produits d’entretien professionnels.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="service-nettoyage">
-  <h2>Confiez-nous vos chaussures à nettoyer</h2>
-  <p>Remplissez le formulaire ci-dessous pour nous envoyer vos chaussures. Nous vous contacterons pour les modalités et le prix.</p>
+  <section>
+    <h2>Avant / Après</h2>
+    <div class="gallery">
+      <img src="avant1.jpg" alt="Avant/Après 1">
+      <img src="avant2.jpg" alt="Avant/Après 2">
+      <img src="avant3.jpg" alt="Avant/Après 3">
+    </div>
+  </section>
 
-  <form action="https://formspree.io/f/ton-id-formspree" method="POST">
-    <label for="nom">Nom complet *</label>
-    <input type="text" id="nom" name="nom" required />
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Contactez-nous pour un devis ou un rendez-vous :</p>
+    <p>Email : contact@sneakwash.fr</p>
+    <p>Téléphone : +33 6 12 34 56 78</p>
+  </section>
 
-    <label for="email">Email *</label>
-    <input type="email" id="email" name="email" required />
+  <footer>
+    &copy; 2025 Sneakwash. Tous droits réservés.
+  </footer>
 
-    <label for="adresse">Adresse postale *</label>
-    <textarea id="adresse" name="adresse" required></textarea>
-
-    <label for="description">Description des chaussures / demande *</label>
-    <textarea id="description" name="description" placeholder="Type, état, nettoyage souhaité..." required></textarea>
-
-    <label for="service">Type de service *</label>
-    <select id="service" name="service" required>
-      <option value="">-- Sélectionnez --</option>
-      <
+</body>
+</html>
